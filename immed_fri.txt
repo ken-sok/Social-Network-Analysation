@@ -1,0 +1,16 @@
+immed_fri.py produces a dictionary of sets of all degree-one or immediate friends of each
+person in the social network. 
+
+The structure of (input) 'friend_list' is:
+- a list that contain tuples
+- each tuple contain 2 strings, with 2 names of individuals in the social network that are reciprocal friends
+- e.g. the 2-tuple ('sam', 'mortiz'), e.g., 'sam' and 'mortiz' are each other's friends
+
+Example: 
+get_friendly_dict([('tom', 'sandy'), ('alex', 'sam'), ('mortiz', 'alex'), ('kim', 'glenn'), ('sam', 'kim'), ('mortiz', 'tom')])
+>>> {'tom': {'mortiz', 'sandy'}, 'sandy': {'tom'}, 'alex': {'mortiz', 'sam'}, 'sam': {'alex', 'kim'}, 'mortiz': {'alex', 'tom'}, 'kim': {'glenn', 'sam'}, 'glenn': {'kim'}}
+
+get_friendly_dict([('lee', 'naruto'), ('lee', 'sam'), ('naruto', 'sakura'), ('jay', 'gary'), ('gary', 'naruto'), ('sakura', 'lee')])
+>>> {'lee': {'naruto', 'sam', 'sakura'}, 'naruto': {'lee', 'sakura', 'gary'}, 'sam': {'lee'}, 'sakura': {'naruto', 'lee'}, 'jay': {'gary'}, 'gary': {'naruto', 'jay'}}
+
+Note that the ordering of the people in the friend_list, and dictionary is not important.  
