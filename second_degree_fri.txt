@@ -1,0 +1,17 @@
+second_degree_fri.py produces a list of all degree-two/ friend of friend of specified
+person in the social network or return an empty list if there are none. 
+
+Inputs needed include: 
+-name of individual 'individual'
+-dictionary of sets friends of each individual in social network 'friend_dict'. 
+
+
+Example: 
+friend_second_besties('ronaldo', {'beckham': {'rooney', 'alex', 'keano'}, 'ronaldo': {'dybala', 'nani'}, 'cole': {'didier'}})
+>>>[]
+
+friend_second_besties('gem', {'kim': {'summer', 'alex', 'gem'}, 'summer': {'kim', 'alex'}, 'alex': {'kim', 'summer'}, 'gem': {'kim'}})
+>>>['alex', 'summer']
+
+
+
