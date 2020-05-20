@@ -1,12 +1,12 @@
 one_indiv_immed_fri.py produces a list of all degree-one/ immediate friends of specified
-person in the social network. 
+person in the social network, or return an empty list if there are none. 
 
 Inputs needed include: 
 -name of individual 'individual'
 -dictionary of sets friends of each individual in social network'friend_dict'. 
 
 Example: 
-friend_besties('ronaldo', {'beckham': {'rooney', 'alex', 'keano'}, 'ronaldo': {'dybala', 'nani'}, 'cole': {'didier'}})>>> {'tom': {'mortiz', 'sandy'}, 'sandy': {'tom'}, 'alex': {'mortiz', 'sam'}, 'sam': {'alex', 'kim'}, 'mortiz': {'alex', 'tom'}, 'kim': {'glenn', 'sam'}, 'glenn': {'kim'}}
+friend_besties('ronaldo', {'beckham': {'rooney', 'alex', 'keano'}, 'ronaldo': {'dybala', 'nani'}, 'cole': {'didier'}})
 >>>['dybala', 'nani']
 
 
