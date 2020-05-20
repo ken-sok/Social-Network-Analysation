@@ -1,0 +1,21 @@
+network_coverage.py produces a float that represents the proportion of connected individuals
+in the social network 'friend_dict' according to their relationship in 'relationship_list'
+
+The function takes three arguments:
+- individuals, a list of individuals'name(s) as strings
+- friend_dict, a dictionary of sets of friends of each individual in the social network (from immed_fri.py)
+- relationship_list, a list of functions defining degree of friendship in the social network, selected from friend_besties and friend_second_besties function
+
+Example: 
+besties_coverage(['hen'], {'mo': {'sonny', 'alex'}, 'sonny': {'alex', 'mo'}, 'alex': {'sonny', 'mo'}, 'hen': {'mo'}}, [])
+>>> 0.25
+besties_coverage(['hen'], {'mo': {'sonny', 'alex'}, 'sonny': {'alex', 'mo'}, 'alex': {'sonny', 'mo'}, 'hen': {'mo'}}, [friend_besties, friend_second_besties])
+>>> 1.0
+besties_coverage(['hen'], {'mo': {'sonny', 'alex'}, 'sonny': {'alex', 'mo'}, 'alex': {'sonny', 'mo'}, 'hen': {'mo'}}, [friend_second_besties])
+>>> 0.75
+besties_coverage(['hen'], {'mo': {'sonny', 'alex'}, 'sonny': {'alex', 'mo'}, 'alex': {'sonny', 'mo'}, 'hen': {'mo'}}, [friend_besties])
+>>> 0.5
+besties_coverage(['kaki'], {'mo': {'sonny', 'alex'}, 'sonny': {'alex', 'mo'}, 'alex': {'sonny', 'mo'}, 'hen': {'mo'}}, [friend_besties])
+>>> 0.0
+besties_coverage(['mo', 'alex'], {'mo': {'sonny', 'alex'}, 'sonny': {'alex', 'mo'}, 'alex': {'sonny', 'mo'}, 'hen': {'mo'}}, [friend_besties])
+>>> 0.75
