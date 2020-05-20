@@ -1,4 +1,4 @@
-immed_fri.py produces a dictionary of sets of all degree-one or immediate friends of each
+immed_fri.py produces a dictionary of sets of all degree-one or immediate friends 'friend_dict' of each
 person in the social network. 
 
 The structure of (input) 'friend_list' is:
