@@ -1,3 +1,6 @@
+
+#adapted from University of Melbourne's sample solution
+
 def get_friendly_dict(friend_list):
     ''' this function takes list of friendship links 'friend_list' between 2 people as 
     argument, finds the immediate friend of each person and return a 

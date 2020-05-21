@@ -1,3 +1,6 @@
+
+#adapted from University of Melbourne's sample solution
+
 from one_indiv_immed_fri import friend_besties
 from second_degree_fri import friend_second_besties
 
