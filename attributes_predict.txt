@@ -1,0 +1,41 @@
+
+
+Using homophily, the function will predict attributes of an individual according 
+their friends' and friends of friends' attributes. 
+
+attributes_predict.py returns a dictionary of features with a predicted list of values for each.
+
+
+Inputs include: 
+
+- unknown_user, a string of the name of target individual
+- features, a set of features you want to predict about unknown_user
+- friend_dict, a dictionary of sets of the immediate friends for each user in the dataset 
+- feat_dict, a dictionary containing the known attributes of each individual in training dataset
+
+
+
+Process: 
+
+-first case scenario, identify the set of besties for the given user, and for each target feature, 
+find the most common among degree one friends; if there is a tie, put all attributes in sorted order in a list. 
+
+-second case scenario, if degree one friends has no target feature, second-besties should then be used. 
+
+-last case scenario :if the the target feature is not listed in both first and second degree, return an empty list.
+
+*** Note: 
+- all attributes are formatted as strings
+- empty string means no value for that feature 
+- Not all attributes will be given for each individual
+- Even if the attribute for unknown_user is available in feat_dict, 
+prediction should still be made using besties and second-besties
+
+friendly_prediction('salah', {'favourite footballer', 'university'}, {'toby': {'scooby', 'alex', 'salah'}, 'scooby': {'toby', 'alex'}, 'alex': {'toby', 'scooby'}, 'salah': {'toby'}}, {'salah': {'university': ''}, 'toby': {'favourite footballer': 'Milner'}, 'scooby': {'favourite footballer': 'firmino', "university": "Swinburne University"}, 'alex': {'favourite footballer': 'Milner', 'university': 'Monash University'}})    
+>>> {'favourite footballer': ['Milner'], 'university': ['Monash University', 'Swinburne University']}
+
+friendly_prediction('salah', {'university'}, {'toby': {'summer', 'alex', 'salah'}, 'summer': {'toby', 'alex'}, 'alex': {'toby', 'scooby'}, 'salah': {'toby'}}, {'salah': {'university': ''}, 'toby': {'favourite footballer': 'Milner'}, 'summer': {'favourite footballer': 'JRR Tolkien', "university": "Monash University"}, 'alex': {'favourite footballer': 'Milner', 'university': 'Monash University'}})
+>>> {'university': ['Monash University']}
+
+friendly_prediction('salah', {'primary school'}, {'salah': {'scooby', 'alex', 'glenn'}, 'scooby': {'salah', 'alex'}, 'alex': {'salah', 'scooby'}, 'glenn': {'salah'}}, {'glenn': {'birthplace': 'Phnom Penh', 'favourite color': 'blue'}, 'salah': {'favourite color': 'White', 'birthplace': 'Phnom Penh'}, 'scooby': {'favourite color': 'Green', "birthplace": "Phnom Penh"}, 'alex': {'favourite color': 'white', 'birthplace': 'Phnom Penh'}})
+>>> {'primary school': []}
